@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+
+    <title>Neuresta - About</title>
+    <link rel="stylesheet" href="{%static 'about_page.css'%}">
+    <link rel="stylesheet" href="{%static 'navbar1.css'%}">
+    <link rel="stylesheet" href="{% static 'upload.css' %}">
+    <link rel="stylesheet" href="{% static 'imageUpload.css' %}">
+    <script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+
+    <!-- LOGO AND MENU -->
+
+    <div class="navbody">
+        <ul class="menu-bar">
+            <li>
+                <a class="nav" href="{% url 'home' %}">Home</a>
+            </li>
+            <li>
+                <a class="nav" href="{% url 'about' %}">About</a>
+            </li>
+            <li>
+                <a class="nav" href="{% url 'gallery' %}">Gallery</a>
+            </li>
+
+            {% if user.is_authenticated %}
+            <li>
+                <a class="nav" href="{% url 'imageupload' %}">Upload</a>
+            </li>
+            <li>
+                <a class="nav" href="{% url 'feedback' %}">Feedback</a>
+            </li>
+            <li>
+                <a class="nav" href="{% url 'profile' %}">Profile</a>
+            </li>
+            <li>
+                <a class="nav" href="{% url 'logoutuser' %}">Logout</a>
+            </li>
+            {% else %}
+            <li>
+                <a class="nav" href="{% url 'loginuser' %}">Login</a>
+            </li>
+            <li>
+                <a class="nav" href="{% url 'signupuser' %}">SignUp</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+    </section>
+    <br><br>
+    <div class="container center" style="top: 10%; width:50%;">
+    <h1 style="padding: 20px 0px;">Generated Image</h1>
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FKdIZOFodNqU%2Fmaxresdefault.jpg&f=1&nofb=1" width="600px">
+     <a class="nav" style="margin: top 20px; color: black; padding: 40px 50px;"  href="{% url 'imageupload' %}">Generate New</a>
+    </div>
+
+
+    <br><br><br>
+    </body>
+    </html>

@@ -1,0 +1,182 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+
+    <title>Neuresta - About</title>
+    <link rel="stylesheet" href="{%static 'about_page.css'%}">
+    <link rel="stylesheet" href="{%static 'navbar1.css'%}">
+
+</head>
+
+
+<body>
+
+    <!-- LOGO AND MENU -->
+
+    <div class="navbody">
+        <ul class="menu-bar">
+            <li>
+                <a class="nav" href="{% url 'home' %}">Home</a>
+            </li>
+            <li>
+                <a class="nav" href="{% url 'about' %}">About</a>
+            </li>
+            <li>
+                <a class="nav" href="{% url 'gallery' %}">Gallery</a>
+            </li>
+
+            {% if user.is_authenticated %}
+            <li>
+                <a class="nav" href="{% url 'imageupload' %}">Upload</a>
+            </li>
+            <li>
+                <a class="nav" href="{% url 'feedback' %}">Feedback</a>
+            </li>
+            <li>
+                <a class="nav" href="{% url 'profile' %}">Profile</a>
+            </li>
+            <li>
+                <a class="nav" href="{% url 'logoutuser' %}">Logout</a>
+            </li>
+            {% else %}
+            <li>
+                <a class="nav" href="{% url 'loginuser' %}">Login</a>
+            </li>
+            <li>
+                <a class="nav" href="{% url 'signupuser' %}">SignUp</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+
+
+    <h1>{{ path1 }}</h1>
+    <h1>{{ path2 }}</h1>
+    <h1>{{ path3 }}</h1>
+    
+    <section id="intro">
+        <div class="top-right-gradient"></div>
+        <div class="wrapper">
+            <div class="intro-left">
+                <h1>Add more style to your image</h1>
+                <p>
+                    Add colour to your life
+                </p>
+
+            </div>
+            <!--  <div class="intro-right">
+             Insert Image here -->
+            <!-- <img src="images/undraw_growth_analytics_8btt.png" alt="image"> -->
+        </div>
+        </div>
+        <div class="bottom-left-gradient"></div>
+    </section>
+
+    <!-- Intro Page END -->
+
+
+    <!-- About Page Start -->
+
+    <section id="about">
+        <div class="wrapper">
+            <div class="about-left">
+            </div>
+
+            <div class="about-right">
+                <h1>This is what we do:</h1>
+                <img src="https://miro.medium.com/max/1050/0*kdbUk85bE6sfIWVf" alt="img">
+                <p>
+                    There has been tremendous growth in field of digital imaging and with the advancement of technology
+                    over the past few years,we are now able to generate stylized images through a webapp.There is more
+                    demand than ever for image filters and styling .
+                    Social media platforms have greatly increased the popularity of image filters.
+
+                </p>
+                <a href="#" class="cta">Learn More</a>
+            </div>
+        </div>
+        <img src="D:\College\Semester 4\WAD\WAD_NST\wad_nst\media\generated\abaa.jpg">
+
+    </section>
+
+    <br><br><br>
+
+    <div class="card">
+        <div class="image">
+            <img src="https://cdn.pixabay.com/photo/2015/11/07/11/41/lake-1031405_1280.jpg">
+        </div>
+        <div class="title">
+            <h1>
+                Shreyas MS
+            </h1>
+        </div>
+        <div class="des">
+            <p>S20190010161 CSE</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="image">
+            <img src="https://cdn.pixabay.com/photo/2015/11/07/11/41/lake-1031405_1280.jpg">
+        </div>
+        <div class="title">
+            <h1>
+                Nischay
+            </h1>
+        </div>
+        <div class="des">
+            <p>S20190010128 CSE</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="image">
+            <img src="https://cdn.pixabay.com/photo/2015/11/07/11/41/lake-1031405_1280.jpg">
+        </div>
+        <div class="title">
+            <h1>
+                Jainendra
+            </h1>
+        </div>
+        <div class="des">
+            <p>S20190010068 CSE</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="image">
+            <img src="https://cdn.pixabay.com/photo/2015/11/07/11/41/lake-1031405_1280.jpg">
+        </div>
+        <div class="title">
+            <h1>
+                Ashar
+            </h1>
+        </div>
+        <div class="des">
+            <p>S20190010012 CSE</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="image">
+            <img src="https://cdn.pixabay.com/photo/2015/11/07/11/41/lake-1031405_1280.jpg">
+        </div>
+        <div class="title">
+            <h1>
+                Sumanth
+            </h1>
+        </div>
+        <div class="des">
+            <p>S20190010089 CSE</p>
+        </div>
+    </div>
+
+
+
+
+
+    <br><br><br>

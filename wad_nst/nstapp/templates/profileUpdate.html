@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <title>Update profile</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{%static 'navbar1.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'update_new.css' %}">
+
+</head>
+
+
+<body>
+
+    <div class="navbody">
+        <ul class="menu-bar">
+          <li>
+            <a class="nav" href="{% url 'home' %}">Home</a>
+          </li>
+          <li>
+            <a class="nav" href="{% url 'about' %}">About</a>
+          </li>
+          <li>
+            <a class="nav" href="{% url 'gallery' %}">Gallery</a>
+          </li>
+    
+          {% if user.is_authenticated %}
+          <li>
+            <a class="nav" href="{% url 'feedback' %}">Feedback</a>
+          </li>
+          <li>
+            <a class="nav" href="{% url 'profile' %}">Profile</a>
+          </li>
+          <li>
+            <a class="nav" href="{% url 'logoutuser' %}">Logout</a>
+          </li>
+          {% else %}
+          <li>
+            <a class="nav" href="{% url 'loginuser' %}">Login</a>
+          </li>
+          <li>
+            <a class="nav" href="{% url 'signupuser' %}">SignUp</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+  <center>
+    <div class="box">
+    <h1>Update Profile!</h1>
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+     <img src="{{ user.profile.image.url }}"></image>
+
+    <input type="file" name="image" id="file" accept="image/*">
+    <label for="file" class="picture">Change Picture</label>
+
+    <input type="text" name="username" style="color: aliceblue;" value="{{ user.username }}">
+    <input type="email" name="email" style="color: aliceblue;" value="{{ user.email }}">
+
+    <button style="float:left; margin:10px 0 0 18.2%;" type="submit" class="primary">Update</button>
+    </form>
+</div>
+  </center>
+</body>
+
+</html>

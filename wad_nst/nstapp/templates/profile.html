@@ -1,0 +1,70 @@
+{% load static %}
+<html>
+    <head>
+        <title>Profile</title>
+        <link href="{% static 'profile.css' %}" rel="stylesheet">
+    </head>
+    <body>
+<div class="container">
+  <header>
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </header>
+  <main>
+    <div class="row">
+      <div class="left a">
+        <div class="photo-left">
+          <img class="photo" src="{{ user.profile.image.url }}">
+          <div class="active"></div>
+        </div>
+        <h4 class="name">{{ user.username }}</h4>
+        <p class="info">{{ user.username }}</p>
+        <p class="info">{{ user.email }}</p>
+        <div class="stats row">
+          <div class="stat b" style="padding-right: 10px;">
+            <p class="number-stat">3000</p>
+            <p class="desc-stat">Followers</p>
+          </div>
+          <div class="stat b">
+            <p class="number-stat">42</p>
+            <p class="desc-stat">Following</p>
+          </div>
+          <div class="stat b" style="padding-left: 1px;">
+            <p class="number-stat">38</p>
+            <p class="desc-stat">Uploads</p>
+          </div>
+        </div>
+        <p class="desc">Hi !  This is description part of bio</p>
+      </div>
+      <div class="right c">
+        <ul class="nav">
+          <li><a href="{% url 'gallery' %}" style="text-decoration: none; color: grey;" > Gallery</a></li>
+          <li><a href="{% url 'about' %}" style="text-decoration: none; color: grey;" > About</a></li>
+          <li><a href="{% url 'profileUpdate' %}" style="text-decoration: none; color: grey;" > Update Profile</a></li>
+          <li><a href="{% url 'home' %}" style="text-decoration: none; color: grey;" > Home</a></li>
+        </ul>
+        <span class="follow">Follow</span>
+        <div class="row gallery">
+          <div class="col-md-4">
+             <img src="https://images.pexels.com/photos/1036371/pexels-photo-1036371.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+          </div>
+          <div class="col-md-4">
+            <img src="https://images.pexels.com/photos/861034/pexels-photo-861034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+          </div>
+          <div class="col-md-4">
+             <img src="https://images.pexels.com/photos/113338/pexels-photo-113338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+          </div>
+          <div class="col-md-4">
+             <img src="https://images.pexels.com/photos/5049/forest-trees-fog-foggy.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+          </div>
+          <div class="col-md-4">
+            <img src="https://images.pexels.com/photos/428431/pexels-photo-428431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+          </div>
+          <div class="col-md-4">
+            <img src="https://images.pexels.com/photos/50859/pexels-photo-50859.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+          </div>
+        </div>
+      </div>
+  </main>
+</div>
+</body>
+</html>

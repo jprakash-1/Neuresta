@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Feedback</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&family=Ubuntu&display=swap"
+    rel="stylesheet">
+  <!--bootstrap linking-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{%static 'navbar1.css'%}">
+  <link rel="stylesheet" href="{% static 'feedbackstyle.css' %}">
+
+</head>
+
+<body>
+    <div class="container mr-auto">
+        <nav class=" navbar navbar-expand-md navbar-light bg-steel fixed-top">
+            <div class="container bar">
+                <a class="navbar-brand mr-4" href="{% url 'home' %}">
+                    <h4 style="color:Grey;"> Neuresta</h4>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+                    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarToggle">
+                    <div class="navbar-nav mr-auto">
+                        <a class="nav-item nav-link" href="{% url 'home' %}">
+                            <h5 style="color:Grey;"> Home</h5>
+                        </a>
+                        <a class="nav-item nav-link" href="{% url 'about' %}">
+                            <h5 style="color:Grey;"> About</h5>
+                        </a>
+                        <a class="nav-item nav-link" href="{% url 'gallery' %}">
+                            <h5 style="color:Grey;"> Gallery</h5>
+                        </a>
+                        <a class="nav-item nav-link" href="{% url 'feedback' %}">
+                            <h5 style="color:Grey;"> Feedback</h5>
+                        </a>
+                    </div>
+                    <!-- Navbar Right Side -->
+                    <div class="navbar-nav">
+                        {% if user.is_authenticated %}
+                        <a class="nav-item nav-link" href="{% url 'imageupload' %}">
+                          <h5 style="color:Grey;"> Upload</h5>
+                      </a>
+                        <a class="nav-item nav-link" href="{% url 'profile' %}">
+                            <h5 style="color:Grey;"> Profile</h5>
+                        </a>
+
+                        <a class="nav-item nav-link" href="{% url 'logoutuser' %}">
+                            <h5 style="color:Grey;"> Logout</h5>
+                        </a>
+                        {% else %}
+                        <a class="nav-item nav-link" href="{% url 'loginuser' %}">
+                            <h5 style="color:Grey;"> Login</h5>
+                        </a>
+                        <a class="nav-item nav-link" href="{% url 'signupuser' %}">
+                            <h5 style="color:Grey;"> SignUp</h5>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+  <div class="wrapper">
+      {{ error }}
+    <form class="form" style="margin-top: 100px;" method="POST">
+        {% csrf_token %}
+      <div class="pageTitle title">Feedback </div>
+      <div class="secondaryTitle title">Please fill this form to let us know about our website.</div>
+      <input type="text" class="name formEntry" name="title" placeholder="Name" />
+      <input type="text" class="email formEntry" name="email" placeholder="Email"/>
+      <textarea class="message formEntry" name="feedback" placeholder="Message"></textarea>
+      <input type="checkbox" class="termsConditions" value="Term">
+      <label style="color: grey" for="terms"> I Accept the <span style="color: #1c7129">Terms of Use</span> & <span style="color: #1c7129">Privacy Policy</span>.</label><br>
+      <button class="submit formEntry" type="submit" onclick="thanks()">Submit</button>
+    </form>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+html, body {
+    height:100%;
+  }
+  
+  .center {
+      background: url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F-hae1oTWRwvs%2FUh90QNPSHSI%2FAAAAAAAAFoQ%2FUSCM9fcoOCc%2Fs1600%2FBackground-Picture-Html2.jpg&f=1&nofb=1);
+    margin: auto;
+    position: relative;
+    text-align: center;
+    top: 50%;
+    width: 20%;  
+  }

@@ -1,0 +1,309 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Neuresta</title>
+  <!--Google font-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&family=Ubuntu&display=swap"
+    rel="stylesheet">
+  <!--bootstrap linking-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <!--Css style file-->
+  <link rel="stylesheet" href="{% static 'homestyles.css' %}">
+  <link rel="stylesheet" href="{%static 'navbar1.css'%}">
+  <!--Font awesome -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.js"></script>
+</head>
+
+<body>
+
+  <div class="navbody">
+    <ul class="menu-bar">
+      <li>
+        <a class="nav" href="{% url 'home' %}">Home</a>
+      </li>
+      <li>
+        <a class="nav" href="{% url 'about' %}">About</a>
+      </li>
+      <li>
+        <a class="nav" href="{% url 'gallery' %}">Gallery</a>
+      </li>
+
+      {% if user.is_authenticated %}
+      <li>
+        <a class="nav" href="{% url 'imageupload' %}">Upload</a>
+      </li>
+      <li>
+        <a class="nav" href="{% url 'feedback' %}">Feedback</a>
+      </li>
+      <li>
+        <a class="nav" href="{% url 'profile' %}">Profile</a>
+      </li>
+      <li>
+        <a class="nav" href="{% url 'logoutuser' %}">Logout</a>
+      </li>
+      {% else %}
+      <li>
+        <a class="nav" href="{% url 'loginuser' %}">Login</a>
+      </li>
+      <li>
+        <a class="nav" href="{% url 'signupuser' %}">SignUp</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+
+  <section id="title">
+    <div class="container-fluid">
+
+
+
+      <!-- Title -->
+      <div class="row">
+        <div class="col-lg-6">
+          <h2> Neuresta - Neural style transfer for dummies</h2>
+          <h1>
+            <p>
+              Everyone has those pictures that just seem so perfect,
+              what if I told you you can stylize these images?
+              <br>
+              With Neuresta, all you have to do is input one content image (ex: a picture of you)
+              and one style image (ex: a pattern you like).
+              <br>
+              Boom! now you have a new picture of you
+              styled with that pattern.
+            </p>
+          </h1>
+
+          <button type="button" class="btn btn-secondary btn-lg download-button">
+            Try now</button>
+          <!-- <button type="button" class="btn btn-lg btn-outline-light download-button"><i class="fab fa-google-play"></i>
+            Share it with your friends</button> -->
+        </div>
+        <div class="col-lg-6">
+
+          <a>
+
+            <img src="{% static 'gallery_images/panda.jpg'%}" width="768" height="500" class="" />
+            <img src="{% static 'gallery_images/panda_style.png' %}" width="768" height="500" class="" />
+
+          </a>
+
+        </div>
+      </div>
+  </section>
+  <div class="division2"></div>
+
+
+  <!-- Features -->
+
+  <section id="features">
+    <div class="row">
+      <div class="features-data col-lg-4">
+        <i class="fas fa-check-circle fa-4x icon"></i>
+        <h3>Easy to use.</h3>
+        <p>Easy functionality, better results.</p>
+      </div>
+      <div class="features-data col-lg-4">
+        <i class="fas fa-bullseye fa-4x icon"></i>
+        <h3>Styled images</h3>
+        <p>Get styles which you love from images you love</p>
+      </div>
+      <div class="features-data col-lg-4 ">
+        <i class="fas fa-heart fa-4x icon"></i>
+        <h3>Style you Images, Have fun</h3>
+        <p>Play with images, Share with your friends, Enjoy!</p>
+      </div>
+    </div>
+
+
+
+  </section>
+
+
+  </section>
+  <section id="cta">
+
+
+    <div class="row">
+
+      <div class="column">
+
+        <a>
+
+          <img src="{% static 'gallery_images/einstein.jpg'%}" width="410px" class="rounded-corners" />
+          <img src="{% static 'gallery_images/einstein_style.png'%}" width="410px" class="rounded-corners" />
+
+        </a>
+      </div>
+
+      <div class="column">
+
+        <a>
+          <img src="{% static 'gallery_images/tiger.jpeg'%}" width="410px" class="rounded-corners" />
+          <img src="{% static 'gallery_images/tiger_stylized.png'%}" width="410px" class="rounded-corners" />
+        </a>
+      </div>
+
+    </div>
+
+    </div>
+
+
+
+    <div class="row">
+
+      <div class="column">
+
+        <a>
+
+          <img src="{% static 'gallery_images/panda.jpg'%}" width="410px" class="rounded-corners" />
+          <img src="{% static 'gallery_images/panda_style.png'%}" width="410px" class="rounded-corners" />
+
+        </a>
+      </div>
+
+      <div class="column">
+
+        <a>
+          <img src="{% static 'gallery_images/woman.jpg'%}" width="410px" class="rounded-corners" />
+          <img src="{% static 'gallery_images/woman_style.png'%}" width="410px" class="rounded-corners" />
+        </a>
+      </div>
+
+    </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section id="cta">
+
+    <h3 class="cta-last">SignUp and Share your Styles</h3>
+    <button type="button" class="btn btn-secondary btn-lg download-button2">
+      SignUp</button>
+    <button type="button" class="btn btn-lg btn-outline-light download-button2">
+      Share</button>
+
+  </section>
+
+  <!-- Pricing -->
+
+  <section id="pricing">
+
+
+    <head>
+
+      <link rel="stylesheet" type="text/css" media="screen" href="{% static 'card.css' %}" />
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+
+    <div>
+      <div class="container">
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <div class="icon">
+                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <h3>
+                <a href="https://www.linkedin.com/in/adamdipinto/" target="_blank">Content Image</a>
+              </h3>
+              <p>The content image is the base image on which you apply NST.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <div class="icon">
+                <i class="fa fa-twitter-square" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <h3>
+                <a href="https://twitter.com/AdamDipinto" target="_blank">Stylized Image</a>
+              </h3>
+              <p>This is the final output image stylized to look like the style image.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <div class="icon">
+                <i class="fa fa-github-square" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <h3>
+                <a href="" target="_blank">Style/Abstract image</a>
+              </h3>
+              <p>This is the style image or the abstract image.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section id="testimonials">
+
+    <div id="testimonial-slide" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h2 style="color: white;">My images used to be so bland, not anymore thanks to Neuresta!.</h2>
+          <img class="testimonials-image" src="{% static 'dog-img.jpg' %}" alt="dog-profile">
+          <em style="color: white;">Jainendra</em>
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text" style="color: white;">I can finally get the images that look super cool and
+            colourful!!</h2>
+          <img class="testimonials-image" src="{% static 'Shreyas_square.jpg' %}" alt="picture">
+          <em style="color: white;">Shreyas</em>
+        </div>
+        <a class="carousel-control-prev" href="#testimonial-slide" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#testimonial-slide" role="button" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+
+    <p>© Copyright 2021 Neuresta</p>
+
+  </footer>
+
+
+</body>
+
+</html>

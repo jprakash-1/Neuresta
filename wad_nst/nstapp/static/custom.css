@@ -1,0 +1,195 @@
+.login{
+    margin: 100px 200px;
+    width:800px; /*width of your image*/
+    /* background-image: url('https://media.moddb.com/cache/images/groups/1/8/7872/thumb_620x2000/15649.jpg'); */
+	background-color: #00fecb;
+    margin:0; /* If you want no margin */
+    padding:0; /*if your want to padding */
+    color:black;
+	
+    
+}
+
+body{
+    /* background-color: rgb(232, 240, 225); */
+    background-image: url("website_background.jpg");
+	background-position: centre;
+	background-size:cover;
+	/* background-repeat: repeat; */
+	/* background-attachment: fixed; */
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+.h2text{
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/* .wrapper {
+	width: 1170px;
+	margin: auto;
+} */
+
+header {
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(https://i.postimg.cc/YjcJg24M/aa.jpg);
+	height: 80vh;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+}
+
+
+.welcome-text {
+	position: relative;
+	margin: 15% 30%;
+    padding: 100px 0;
+	text-align: center;
+    background-position: center;
+}
+.welcome-text h1 {
+	text-align: center;
+	color: lightblue;
+	text-transform: uppercase;
+	font-size: 30px;
+}
+.welcome-text h1 span {
+	color: #00fecb;
+}
+.welcome-text p {
+	text-align: center;
+	color: #fff;
+	text-transform: absolute;
+	font-size: 15px;
+}
+
+.welcome-text p2 {
+	text-align: center;
+	color: tomato;
+	text-transform: uppercase;
+	font-size: 13px;
+}
+
+.abc {
+	position: relative;
+	/* width: 1110px; */
+	/* border: 70px solid rgba(255, 68, 0, 0.796); */
+	/* padding: 50px; */
+	/* margin: 20px; */
+	/* height: 680px; */
+
+}
+
+.caution{
+	color:rgb(46, 34, 30)
+}
+
+.imgtext {
+	position: absolute;
+	top:10%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 700%;
+	text-align: center;
+	font-family: 'Courier New', monospace;
+	font-weight: 200;
+}
+
+.bar {
+	width: 1110px;
+	background-color: rgb(88,91,126);
+	background-image: linear-gradient(to right, rgb(87, 77, 72), rgb(231, 180, 151));
+	border-radius: 12px;
+	/* border: 10px solid 	rgb(255,99,71); */
+	/* padding: 50px; */
+	/* margin: 20px; */
+	height: 50px;
+
+}
+
+.signup{
+	background-color: #00fecb;
+	margin: 100px 20px;
+}
+
+.insignup{
+	padding: 20px 30px;
+}
+
+.inlogin{
+	background-color: rgb(126, 108, 110);
+	border-radius: 25px;
+	padding: 30px 30px;
+}
+
+.logindiv{
+	position:relative;
+	top: 120px;
+	width: 85%;
+	padding: 10px;
+	margin:auto;
+}
+
+.error_login{
+	color: #fff;
+}
+
+.thumbnail:hover {
+    position:relative;
+    top:-25px;
+    left:-35px;
+    width:500px;
+    height:auto;
+    display:block;
+    z-index:999;
+}
+
+
+a img:last-child {
+	display: none;  
+  }
+  a:hover img:last-child {
+	display: block;  
+  }
+  a:hover img:first-child {
+	display: none;  
+  }
+
+
+.row {
+	display: flex;
+  }
+  
+  .column {
+	flex: 33.33%;
+	padding: 5px;
+  }
+
+
+
+.figure {
+	position: relative;
+	width: 360px; 
+	max-width: 100%;
+}
+
+.figure img.image-hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.figure:hover img.image-hover {
+  opacity: 1;
+}

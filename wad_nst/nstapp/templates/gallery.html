@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Neuresta - Gallery</title>
+    <link rel="stylesheet" href="{%static 'gallery.css'%}">
+    <link rel="stylesheet" href="{%static 'navbar1.css'%}">
+    <style>
+        body {
+            background-image: url("https://images.unsplash.com/photo-1566305977571-5666677c6e98?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2097&q=80");
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="navbody">
+            <ul class="menu-bar">
+                <li>
+                    <a class="nav" href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                    <a class="nav" href="{% url 'about' %}">About</a>
+                </li>
+                <li>
+                    <a class="nav" href="{% url 'gallery' %}">Gallery</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li>
+                    <a class="nav" href="{% url 'imageupload' %}">Upload</a>
+                </li>
+                <li>
+                    <a class="nav" href="{% url 'feedback' %}">Feedback</a>
+                </li>
+                <li>
+                    <a class="nav" href="{% url 'profile' %}">Profile</a>
+                </li>
+                <li>
+                    <a class="nav" href="{% url 'logoutuser' %}">Logout</a>
+                </li>
+                {% else %}
+                <li>
+                    <a class="nav" href="{% url 'loginuser' %}">Login</a>
+                </li>
+                <li>
+                    <a class="nav" href="{% url 'signupuser' %}">SignUp</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+
+
+        <div class="container">
+            <div class="box">
+                <img src='{% static "gallery_images/tiger.jpeg" %}'>
+                <span>Content</span>
+            </div>
+            <div class="box">
+                <img src='{% static "gallery_images/tiger_stylized.png" %}'>
+                <span>Stylized</span>
+            </div>
+            <div class="box">
+                <img src='{% static "gallery_images/abstract_tiger.jpg" %}'>
+                <span>Style</span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="box">
+                <img src='{% static "gallery_images/woman.jpg" %}'>
+                <span>Content</span>
+            </div>
+            <div class="box">
+                <img src='{% static "gallery_images/woman_style_2.png" %}'>
+                <span>Stylized</span>
+            </div>
+            <div class="box">
+                <img src='{% static "gallery_images/abstract_woman.jpg" %}'>
+                <span>Style</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box">
+                <img src='{% static "gallery_images/panda.jpg" %}'>
+                <span>Content</span>
+            </div>
+            <div class="box">
+                <img src='{% static "gallery_images/panda_style.png" %}'>
+                <span>Stylized</span>
+            </div>
+            <div class="box">
+                <img src='{% static "gallery_images/abstract_panda.jpg" %}'>
+                <span>Style</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box">
+                <img src='{% static "gallery_images/petronas_towers.jpg" %}'>
+                <span>Content</span>
+            </div>
+            <div class="box">
+                <img src='{% static "gallery_images/petronas_towers_style.png" %}'>
+                <span>Stylized</span>
+            </div>
+            <div class="box">
+                <img src='{% static "gallery_images/abstract_petronas_towers.jpeg" %}'>
+                <span>Style</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box">
+                <img src='{% static "gallery_images/quokka.jpg" %}'>
+                <span>Content</span>
+            </div>
+            <div class="box">
+                <img src='{% static "gallery_images/quokka_style.png" %}'>
+                <span>Stylized</span>
+            </div>
+            <div class="box">
+                <img src='{% static "gallery_images/abstract_quokka.jpg" %}'>
+                <span>Style</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box">
+                <img src='{% static "gallery_images/einstein.jpg" %}'>
+                <span>Content</span>
+            </div>
+            <div class="box">
+                <img src='{% static "gallery_images/einstein_style.png" %}'>
+                <span>Stylized</span>
+            </div>
+            <div class="box">
+                <img src='{% static "gallery_images/abstract_einstein.jpg" %}'>
+                <span>Style</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
